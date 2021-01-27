@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Test jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#p1").dblclick(function(){
+                $(this).css("color", "red");
+            });
+            $("#p2").click(function(){
+                $(this).hide();
+            });
+            $("input").focus(function(){
+                $(this).css("background-color", "pink")
+            });
+            $("input").blur(function(){
+                $(this).css("background-color", "darkcyan")
+            });
+            $(".btn1").click(function(){
+                $("#p2").show();
+            });
+            $(".btn2").click(function(){
+                $("#p3").toggle("slow");
+            });
+            $(".btn3").click(function(){
+                $("div").animate({ left: '250px',
+                                    opacity: '0.5',
+                                    height: '150px',
+                                    width: '75%'
+                                     }); 
+            });
+            $(".btn4").click(function(){
+                $("div").slideToggle("slow");
+            });
+            $(".btn5").click(function(){
+                alert("HTML: " + $("#p3").html());
+            });
+            $(".btn6").click(function(){
+                alert("TEXT: " + $("#p3").text());
+            });
+            $(".btn7").click(function(){
+                alert("Value: " + $("input").val());
+            });
+            $(".btn8").click(function(){
+                $("input").val("Banana");
+            })
+        })
+
+    </script>
+    <style>
+        div {
+            background-color: bisque;
+        
+        }
+    </style>
+</head>
+<body>
+    <button class="btn4">Slide Toggle</button>
+    <div>
+    <p id="p1">Hello! Klik dua kali untuk merubah warnaku menjadi merah</p>
+    <p id="p2">Klik aku satu kali agar aku hilang dan klik show untuk memunculkanku kembali </p>
+    Fruit: <input type="text" name="name" value="Apple">
+    <p id="p3">Lorem ipsum, <b><i> dolor</i></b> sit amet consectetur adipisicing elit. Quod, maxime.</p>
+    </div>
+
+    <button class="btn1">Show</button>
+    <button class="btn2">Toggle Lorem</button>
+    <button class="btn3">Animate</button>
+    <button class="btn5">Show HTML</button>
+    <button class="btn6">Show Text</button>
+    <button class="btn7">Show Value</button>
+    <button class="btn8">Set Value</button>
+</body>
+</html>
